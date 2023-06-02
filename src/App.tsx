@@ -1,7 +1,9 @@
+import Users from "./users/Users";
 
 function App() {
   return (
     <>
+      <Users />
     </>
   );
 }
