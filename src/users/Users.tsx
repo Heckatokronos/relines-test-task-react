@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IUser, UserList } from "./UserList";
 import { Button, Card } from "../app/common";
+import { RatedUsers } from "./UserRated";
 
 const Users = () => {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -35,12 +36,18 @@ const Users = () => {
 
   return (
     <Card className="centered">
-      <h2> Список пользователей </h2>
-      <UserList users={users} onRateUser={rateUser} />
+      <Card>
+        <h2> Список пользователей </h2>
+        <UserList users={users} onRateUser={rateUser} />
+        {users.length === 0 && ratedUsers.length === 0 && (
+          <Button onClick={fetchUsers}>Загрузить пользователей</Button>
+        )}
+      </Card>
 
-      {users.length === 0 && ratedUsers.length === 0 && (
-        <Button onClick={fetchUsers}>Загрузить пользователей</Button>
-      )}
+      <Card>
+        <h2> Список пользователей с оценкой </h2>
+        <RatedUsers ratedUsers={ratedUsers} onRateUser={rateUser} />
+      </Card>
     </Card>
   );
 };

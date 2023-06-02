@@ -1,23 +1,20 @@
 import { Button, Item } from "../app/common";
 import { User } from "./User";
+import { IUser } from "./UserList";
 
-import './User.scss'
+import "./User.scss";
 
-
-export interface IUser {
-  id: number;
-  name: string;
-  rating: number;
-}
-
-interface IUsersProps {
-  users: IUser[];
+interface IRatedUsersProps {
+  ratedUsers: IUser[];
   onRateUser: (id: number, rating: number) => void;
 }
 
-export const UserList: React.FC<IUsersProps> = ({ users, onRateUser }) => (
+export const RatedUsers: React.FC<IRatedUsersProps> = ({
+  ratedUsers,
+  onRateUser,
+}) => (
   <ul className="ul">
-    {users.map((user) => (
+    {ratedUsers.map((user) => (
       <Item>
         <li key={user.id}>
           <User user={user} />

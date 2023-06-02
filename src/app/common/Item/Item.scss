@@ -1,0 +1,11 @@
+.item {
+  display: flex;
+  padding: 0 10%;
+  height: auto;
+  justify-content: space-between;
+
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+}
