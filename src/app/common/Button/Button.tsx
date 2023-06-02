@@ -1,18 +1,13 @@
 import "./Button.scss";
 
 interface ButtonProps {
-  color?: string;
   children: React.ReactNode;
   onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ color, children, onClick }) => {
+export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
-    <button
-      style={{ backgroundColor: color }}
-      className="button"
-      onClick={onClick}
-    >
+    <button className="button" onClick={onClick}>
       {children}
     </button>
   );

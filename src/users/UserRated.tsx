@@ -1,6 +1,6 @@
 import { Button, Item } from "../app/common";
 import { User } from "./User";
-import { IUser } from "./UserList";
+import { IUser } from "./Users";
 
 import "./User.scss";
 
@@ -15,17 +15,13 @@ export const RatedUsers: React.FC<IRatedUsersProps> = ({
 }) => (
   <ul className="ul">
     {ratedUsers.map((user) => (
-      <Item>
-        <li key={user.id}>
+      <li key={user.id}>
+        <Item>
           <User user={user} />
-          <Button color="green" onClick={() => onRateUser(user.id, 1)}>
-            +
-          </Button>
-          <Button color="red" onClick={() => onRateUser(user.id, -1)}>
-            -
-          </Button>
-        </li>
-      </Item>
+          <Button onClick={() => onRateUser(user.id, 1)}>+</Button>
+          <Button onClick={() => onRateUser(user.id, -1)}>-</Button>
+        </Item>
+      </li>
     ))}
   </ul>
 );

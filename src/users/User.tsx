@@ -1,12 +1,12 @@
-import React from "react";
-import { IUser } from "./UserList";
+import { memo } from "react";
+import { IUser } from "./Users";
 
 interface IUserProps {
   user: IUser;
 }
 
-export const User = ({ user }: IUserProps) => (
+export const User = memo(({ user }: IUserProps) => (
   <>
     {user.name} ({user.rating})
   </>
-);
+));

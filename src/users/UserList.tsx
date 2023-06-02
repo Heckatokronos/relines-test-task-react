@@ -1,14 +1,8 @@
 import { Button, Item } from "../app/common";
 import { User } from "./User";
+import { IUser } from "./Users";
 
-import './User.scss'
-
-
-export interface IUser {
-  id: number;
-  name: string;
-  rating: number;
-}
+import "./User.scss";
 
 interface IUsersProps {
   users: IUser[];
@@ -18,17 +12,13 @@ interface IUsersProps {
 export const UserList: React.FC<IUsersProps> = ({ users, onRateUser }) => (
   <ul className="ul">
     {users.map((user) => (
-      <Item>
-        <li key={user.id}>
+      <li key={user.id}>
+        <Item>
           <User user={user} />
-          <Button color="green" onClick={() => onRateUser(user.id, 1)}>
-            +
-          </Button>
-          <Button color="red" onClick={() => onRateUser(user.id, -1)}>
-            -
-          </Button>
-        </li>
-      </Item>
+          <Button onClick={() => onRateUser(user.id, 1)}>+</Button>
+          <Button onClick={() => onRateUser(user.id, -1)}>-</Button>
+        </Item>
+      </li>
     ))}
   </ul>
 );

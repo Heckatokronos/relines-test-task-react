@@ -1,18 +1,9 @@
 button {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border-color: solid;
-}
-
-@mixin button-styles($color) {
-  background-color: $color;
-  color: white;
-}
-
-.green-button {
-  @include button-styles(#7fff00);
-}
-
-.red-button {
-  @include button-styles(#ee204d);
+  font-size: 1rem;
+  height: 36px;
+  margin: 0;
+  padding: 0 11px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
 }
